@@ -1,0 +1,13 @@
+PODS:
+  - Canvas (0.1.2)
+  - GPUImage (0.1.7)
+
+DEPENDENCIES:
+  - Canvas (~> 0.1.2)
+  - GPUImage (~> 0.1.6)
+
+SPEC CHECKSUMS:
+  Canvas: eb861e3b555d032648146c8ffda1a5dea40059ca
+  GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
+
+COCOAPODS: 0.39.0
