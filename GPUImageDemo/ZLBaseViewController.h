@@ -10,4 +10,8 @@
 
 @interface ZLBaseViewController : UIViewController
 
+@property (nonatomic,strong) UINavigationController *nav;
+@property (nonatomic,strong) UINavigationBar        *navBar;
+@property (nonatomic,strong) UINavigationItem       *navItem;
+
 @end

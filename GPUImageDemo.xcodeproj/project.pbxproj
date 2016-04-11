@@ -21,6 +21,9 @@
 		48D9FA111CB786940084F86B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48D9FA101CB786940084F86B /* QuartzCore.framework */; };
 		48D9FA1F1CB7BAB70084F86B /* ZLBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D9FA1E1CB7BAB70084F86B /* ZLBaseViewController.m */; };
 		48D9FA231CB7BAE60084F86B /* ZLMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D9FA221CB7BAE60084F86B /* ZLMainViewController.m */; };
+		48E374A21CBB4CAC0037080D /* ZLImageEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48E374A11CBB4CAC0037080D /* ZLImageEditViewController.m */; };
+		48E374A51CBB4E0C0037080D /* ZLCameraEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48E374A41CBB4E0C0037080D /* ZLCameraEditViewController.m */; };
+		48E374A81CBB4E1B0037080D /* ZLVideoEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48E374A71CBB4E1B0037080D /* ZLVideoEditViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +66,12 @@
 		48D9FA1E1CB7BAB70084F86B /* ZLBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLBaseViewController.m; sourceTree = "<group>"; };
 		48D9FA211CB7BAE60084F86B /* ZLMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLMainViewController.h; sourceTree = "<group>"; };
 		48D9FA221CB7BAE60084F86B /* ZLMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLMainViewController.m; sourceTree = "<group>"; };
+		48E374A01CBB4CAC0037080D /* ZLImageEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLImageEditViewController.h; sourceTree = "<group>"; };
+		48E374A11CBB4CAC0037080D /* ZLImageEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLImageEditViewController.m; sourceTree = "<group>"; };
+		48E374A31CBB4E0C0037080D /* ZLCameraEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLCameraEditViewController.h; sourceTree = "<group>"; };
+		48E374A41CBB4E0C0037080D /* ZLCameraEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLCameraEditViewController.m; sourceTree = "<group>"; };
+		48E374A61CBB4E1B0037080D /* ZLVideoEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLVideoEditViewController.h; sourceTree = "<group>"; };
+		48E374A71CBB4E1B0037080D /* ZLVideoEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLVideoEditViewController.m; sourceTree = "<group>"; };
 		73CE51DBAF2DEB071E41FABF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9173250F445BDD3DD7ACF642 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F8FE7003A5A6C6C0195B0E6B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,6 +203,8 @@
 		48D9FA1B1CB7B9DC0084F86B /* ZLImageEdit */ = {
 			isa = PBXGroup;
 			children = (
+				48E374A01CBB4CAC0037080D /* ZLImageEditViewController.h */,
+				48E374A11CBB4CAC0037080D /* ZLImageEditViewController.m */,
 			);
 			name = ZLImageEdit;
 			sourceTree = "<group>";
@@ -240,6 +251,8 @@
 		48D9FA261CB7BB560084F86B /* ZLCameraEdit */ = {
 			isa = PBXGroup;
 			children = (
+				48E374A31CBB4E0C0037080D /* ZLCameraEditViewController.h */,
+				48E374A41CBB4E0C0037080D /* ZLCameraEditViewController.m */,
 			);
 			name = ZLCameraEdit;
 			sourceTree = "<group>";
@@ -247,6 +260,8 @@
 		48D9FA271CB7BB750084F86B /* ZLVideoEdit */ = {
 			isa = PBXGroup;
 			children = (
+				48E374A61CBB4E1B0037080D /* ZLVideoEditViewController.h */,
+				48E374A71CBB4E1B0037080D /* ZLVideoEditViewController.m */,
 			);
 			name = ZLVideoEdit;
 			sourceTree = "<group>";
@@ -441,7 +456,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				48D9FA1F1CB7BAB70084F86B /* ZLBaseViewController.m in Sources */,
+				48E374A81CBB4E1B0037080D /* ZLVideoEditViewController.m in Sources */,
+				48E374A21CBB4CAC0037080D /* ZLImageEditViewController.m in Sources */,
 				48D9F9D81CB7824D0084F86B /* AppDelegate.m in Sources */,
+				48E374A51CBB4E0C0037080D /* ZLCameraEditViewController.m in Sources */,
 				48D9F9D51CB7824D0084F86B /* main.m in Sources */,
 				48D9FA231CB7BAE60084F86B /* ZLMainViewController.m in Sources */,
 			);
@@ -580,7 +598,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = GPUImageDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhanglei.GPUImageDemo;
 				PRODUCT_NAME = "Leoi美图";
@@ -597,7 +615,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = GPUImageDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhanglei.GPUImageDemo;
 				PRODUCT_NAME = "Leoi美图";

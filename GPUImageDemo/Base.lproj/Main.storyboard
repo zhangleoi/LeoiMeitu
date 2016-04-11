@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Main View Controller-->
@@ -91,15 +92,153 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tRQ-Ru-b13"/>
+                    <connections>
+                        <segue destination="r1Y-jm-kEF" kind="show" identifier="showImageEdit" id="Iof-hO-xyc"/>
+                        <segue destination="u02-by-xCm" kind="show" identifier="showCameraEdit" id="O2e-IB-S8o"/>
+                        <segue destination="bhl-IZ-6Mb" kind="show" identifier="showVideoEdit" id="7MA-mz-cIU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1227" y="579"/>
+            <point key="canvasLocation" x="1286" y="594"/>
+        </scene>
+        <!--Image Edit View Controller-->
+        <scene sceneID="0jJ-k5-A1c">
+            <objects>
+                <viewController id="r1Y-jm-kEF" customClass="ZLImageEditViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9b0-s3-19B"/>
+                        <viewControllerLayoutGuide type="bottom" id="YVi-2s-TQw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9XF-uN-B0a">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jd3-jM-M2J">
+                                <rect key="frame" x="20" y="64" width="560" height="454"/>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LfZ-br-a7Z">
+                                <rect key="frame" x="0.0" y="520" width="600" height="80"/>
+                                <subviews>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="filter_scenery_115" translatesAutoresizingMaskIntoConstraints="NO" id="Ajs-B7-ewb">
+                                        <rect key="frame" x="8" y="10" width="60" height="60"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="eC5-jO-crX" appends="YES" id="eev-WR-yZt"/>
+                                        </connections>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Ajs-B7-ewb" firstAttribute="leading" secondItem="LfZ-br-a7Z" secondAttribute="leading" constant="8" id="0E8-EA-tAe"/>
+                                    <constraint firstItem="Ajs-B7-ewb" firstAttribute="top" secondItem="LfZ-br-a7Z" secondAttribute="topMargin" constant="2" id="3cU-qL-7wW"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ajs-B7-ewb" secondAttribute="trailing" constant="532" id="Y5m-kP-wwo"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ajs-B7-ewb" secondAttribute="bottom" constant="10" id="fYF-kS-urT"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="LfZ-br-a7Z" secondAttribute="trailing" constant="-20" id="1ra-9d-ojA"/>
+                            <constraint firstItem="jd3-jM-M2J" firstAttribute="top" secondItem="9b0-s3-19B" secondAttribute="bottom" id="7jy-0B-yAp"/>
+                            <constraint firstItem="LfZ-br-a7Z" firstAttribute="top" secondItem="jd3-jM-M2J" secondAttribute="bottom" constant="2" id="8C6-be-PyL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jd3-jM-M2J" secondAttribute="trailing" id="C6L-xD-4TF"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="jd3-jM-M2J" secondAttribute="leading" id="VeR-rL-b7U"/>
+                            <constraint firstItem="YVi-2s-TQw" firstAttribute="top" secondItem="jd3-jM-M2J" secondAttribute="bottom" constant="82" id="WUk-Ty-7ul"/>
+                            <constraint firstItem="LfZ-br-a7Z" firstAttribute="leading" secondItem="9XF-uN-B0a" secondAttribute="leadingMargin" constant="-20" id="Wgy-Qh-0kn"/>
+                            <constraint firstItem="YVi-2s-TQw" firstAttribute="top" secondItem="LfZ-br-a7Z" secondAttribute="bottom" id="dzk-ui-bhe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="filteredImageView" destination="jd3-jM-M2J" id="tlC-KV-n9Q"/>
+                        <outlet property="scrollView" destination="LfZ-br-a7Z" id="fvG-2b-8LX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xRy-3a-sGz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="eC5-jO-crX">
+                    <connections>
+                        <action selector="filered:" destination="r1Y-jm-kEF" id="a4Z-dI-swG"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2015" y="-135"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="cEI-e3-ybO">
+            <objects>
+                <viewController id="Li6-1f-z3X" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PEp-kt-C6t"/>
+                        <viewControllerLayoutGuide type="bottom" id="rGd-vY-5ly"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="L9V-Cq-KGN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TJw-lt-ZGW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2641" y="-409"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="XZJ-lh-OC9">
+            <objects>
+                <viewController id="KCL-Ml-lwy" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bal-CZ-8kC"/>
+                        <viewControllerLayoutGuide type="bottom" id="EIb-Ml-9ZX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5tZ-gi-MVf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EUp-a7-Fr1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2641" y="273"/>
+        </scene>
+        <!--Video Edit View Controller-->
+        <scene sceneID="loU-wq-LvX">
+            <objects>
+                <viewController id="bhl-IZ-6Mb" customClass="ZLVideoEditViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fSf-D2-8Ry"/>
+                        <viewControllerLayoutGuide type="bottom" id="2Vq-c7-Gjq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="E0M-Vw-Dr1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ahv-OG-K7t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2015" y="594"/>
+        </scene>
+        <!--Camera Edit View Controller-->
+        <scene sceneID="mEW-iy-4Og">
+            <objects>
+                <viewController id="u02-by-xCm" customClass="ZLCameraEditViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Yt6-kW-vDC"/>
+                        <viewControllerLayoutGuide type="bottom" id="m7z-u0-unp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XT9-Dy-Y0m">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wkp-ep-x26" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2015" y="1369"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1K7-2M-hhh">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="AAY-Aj-bF9" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AAY-Aj-bF9" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5kL-tk-Lqf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -112,11 +251,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BHU-3V-L40" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="486" y="590"/>
+            <point key="canvasLocation" x="599" y="594"/>
         </scene>
     </scenes>
     <resources>
         <image name="bg_home_defaultRandom" width="375" height="667"/>
+        <image name="filter_scenery_115" width="60" height="60"/>
         <image name="home_block_orange_a" width="103" height="105"/>
         <image name="home_block_pink_a" width="103" height="105"/>
         <image name="home_block_red_a" width="103" height="105"/>
